@@ -1,2 +1,2 @@
 # yamlconfig
-.NET Application Configuration with YAML
+.NET Strongly-typed Application Configuration with YAML

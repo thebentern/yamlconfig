@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlConfig.Example", "YamlC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlConfig", "YamlConfig\YamlConfig.csproj", "{458FE17A-5C10-4C8F-85E4-59FE3184CB5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlConfig.Test", "YamlConfig.Test\YamlConfig.Test.csproj", "{367338F5-0A32-4DDF-8F04-08FBCB52F22F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{458FE17A-5C10-4C8F-85E4-59FE3184CB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{458FE17A-5C10-4C8F-85E4-59FE3184CB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{458FE17A-5C10-4C8F-85E4-59FE3184CB5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367338F5-0A32-4DDF-8F04-08FBCB52F22F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367338F5-0A32-4DDF-8F04-08FBCB52F22F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367338F5-0A32-4DDF-8F04-08FBCB52F22F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367338F5-0A32-4DDF-8F04-08FBCB52F22F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

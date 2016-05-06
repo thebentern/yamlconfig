@@ -5,7 +5,7 @@ namespace YamlConfig
     /// <summary>
     /// Container for Configuration type reference and its corresponding Attribute reference
     /// </summary>
-    public class ConfigurationType
+    public class ConfigType
     {
         /// <summary>
         /// Gets or sets the type.
@@ -21,6 +21,6 @@ namespace YamlConfig
         /// <value>
         /// The attribute.
         /// </value>
-        public YamlConfigurationAttribute Attribute { get; set; }
+        public YamlConfigAttribute Attribute { get; set; }
     }
 }

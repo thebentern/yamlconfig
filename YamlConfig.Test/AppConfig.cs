@@ -1,7 +1,7 @@
-﻿namespace YamlConfig.Example
+﻿namespace YamlConfig.Test
 {
     [YamlConfig]
-    public class MyAppConfig
+    public class AppConfig
     {
         public string MuhString { get; set; }
 

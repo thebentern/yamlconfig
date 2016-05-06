@@ -5,16 +5,17 @@ namespace YamlConfig
     /// <summary>
     /// Configuration attribute for denoting the strongly typed configuration
     /// </summary>
-    public sealed class YamlConfigurationAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = false, Inherited = true)]
+    public sealed class YamlConfigAttribute : Attribute
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="YamlConfigurationAttribute"/> class.
+        /// Initializes a new instance of the <see cref="YamlConfigAttribute"/> class.
         /// </summary>
         /// <param name="configurationFileName">Name of the configuration file.</param>
         /// <remarks>
         /// Configuration file defaults to Config.yml
         /// </remarks>
-        public YamlConfigurationAttribute(string configurationFileName = null)
+        public YamlConfigAttribute(string configurationFileName = null)
         {
             this.ConfigurationFileName = configurationFileName ?? "Config.yml";
         }

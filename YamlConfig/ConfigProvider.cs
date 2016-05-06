@@ -13,14 +13,14 @@ namespace YamlConfig
     /// </summary>
     public class ConfigProvider<T> : IConfigProvider<T>
     {
-        private static readonly IEnumerable<ConfigurationType> ConfigurationTypes;
+        private static readonly IEnumerable<ConfigType> ConfigTypes;
 
         /// <summary>
         /// Initializes the <see cref="ConfigProvider{T}"/> class.
         /// </summary>
         static ConfigProvider()
         {
-            ConfigurationTypes = ConfigurationTypesResolver.GetTypes();
+            ConfigTypes = AssemblyConfigResolver.GetTypes();
         }
 
         /// <summary>
@@ -38,13 +38,13 @@ namespace YamlConfig
         {
             get
             {
-                var attribute = ConfigurationTypes.FirstOrDefault(t => t.Type == typeof(T));
+                var attribute = ConfigTypes.FirstOrDefault(t => t.Type == typeof(T));
                 if (attribute == null)
                 {
                     throw new InvalidOperationException($@"Cannot retrieve configuration for type '{typeof(T).Name}',
                                                         as it is does not have the YamlConfiguration attribute defined");
                 }
-                return LoadConfiguration<T>(attribute.Attribute.ConfigurationFileName);
+                return LoadConfig(attribute.Attribute.ConfigurationFileName);
             }
         }
 
@@ -53,8 +53,8 @@ namespace YamlConfig
         /// </summary>
         /// <typeparam name="T">Configuration type</typeparam>
         /// <param name="configPath">The configuration path.</param>
-        /// <returns></returns>
-        private static T LoadConfiguration<T>(string configPath)
+        /// <returns>Instance of Config type</returns>
+        private static T LoadConfig(string configPath)
         {
             var deserializer = new Deserializer(namingConvention: new NullNamingConvention(), ignoreUnmatched: true);
 

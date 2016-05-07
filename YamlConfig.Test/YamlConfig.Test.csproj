@@ -81,19 +81,16 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="ConfigProvider.cs" />
+    <Compile Include="ConfigProviderTest.cs" />
     <Compile Include="CompositionRootTest.cs" />
-    <Compile Include="AppConfig.cs" />
-    <Compile Include="DifferentFileConfig.cs" />
+    <Compile Include="Fixtures\AppConfig.cs" />
     <Compile Include="AssemblyConfigResolverTest.cs" />
+    <Compile Include="Fixtures\DefaultConfig.cs" />
     <Compile Include="YamlConfigurationAttributeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config.yml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MyDifferentFileConfig.yml">
+    <Content Include="Fixtures\Config.yml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
@@ -104,9 +101,7 @@
       <Name>YamlConfig</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fixtures\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

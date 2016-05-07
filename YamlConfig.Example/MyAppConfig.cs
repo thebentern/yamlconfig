@@ -1,4 +1,6 @@
-﻿namespace YamlConfig.Example
+﻿using YamlConfig.Core;
+
+namespace YamlConfig.Example
 {
     [YamlConfig]
     public class MyAppConfig

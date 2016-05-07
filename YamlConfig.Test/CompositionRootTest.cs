@@ -1,11 +1,10 @@
-﻿using FluentAssertions;
+﻿using SimpleInjector;
 
-using NUnit.Framework;
-using SimpleInjector;
-using System.Linq;
+using YamlConfig.Core;
 
 namespace YamlConfig.Test
 {
+
     public class ExtendedCompositionRoot : CompositionRoot
     {
         public ExtendedCompositionRoot()
@@ -19,15 +18,25 @@ namespace YamlConfig.Test
 
     public class CompositionRootTest
     {
-        [Test]
-        public void Registers_Config_Provider()
-        {
-            var compositionRoot = new ExtendedCompositionRoot();
-            compositionRoot.Container.Verify(VerificationOption.VerifyAndDiagnose);
+        //[Test]
+        //public void Registers_Config_Provider()
+        //{
+            
+        //    WeakReference reference = null;
+        //    new Action(() =>
+        //    {
+        //        var compositionRoot = new ExtendedCompositionRoot();
+        //        compositionRoot.Container.Verify(VerificationOption.VerifyAndDiagnose);
 
-            //var instances = compositionRoot.Container.GetAllInstances(typeof(IConfigProvider<>));
-            // Should be a singleton instance
-            //instances.Count().Should().Be(1);
-        }
+        //        reference = new WeakReference(compositionRoot, true);
+        //    })();
+
+        //    // Service should have gone out of scope about now, 
+        //    // so the garbage collector can clean it up
+        //    GC.Collect();
+        //    GC.WaitForPendingFinalizers();
+
+        //    Assert.IsNull(reference.Target);
+        //}
     }
 }

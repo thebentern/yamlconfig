@@ -6,62 +6,72 @@ using System.IO;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
-namespace YamlConfig
+namespace YamlConfig.Core
 {
     /// <summary>
     /// Bootstrapper for loading the configuration
     /// </summary>
-    public class ConfigProvider<T> : IConfigProvider<T>
+    /// <typeparam name="T">Configuration type</typeparam>
+    public sealed class ConfigProvider<T> : IConfigProvider<T>
     {
+        // ReSharper disable once StaticMemberInGenericType
         private static readonly IEnumerable<ConfigType> ConfigTypes;
 
         /// <summary>
         /// Initializes the <see cref="ConfigProvider{T}"/> class.
         /// </summary>
+        /// <remarks>
+        /// Static constructor is defined to reflect on 
+        /// configuration types defined in the assembly
+        /// </remarks>
         static ConfigProvider()
         {
             ConfigTypes = AssemblyConfigResolver.GetTypes();
         }
 
         /// <summary>
-        /// Gets the instance of the configuration type.
+        /// Gets the configuration instance for the specified type.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns>
-        /// Resolved config type instance
-        /// </returns>
-        /// <exception cref="System.InvalidOperationException">
-        /// Thrown if cannot retrieve configuration for type because 
-        /// it is does not have the YamlConfiguration attribute defined
-        /// </exception>
-        public T Resolve 
-        {
-            get
-            {
-                var attribute = ConfigTypes.FirstOrDefault(t => t.Type == typeof(T));
-                if (attribute == null)
-                {
-                    throw new InvalidOperationException($@"Cannot retrieve configuration for type '{typeof(T).Name}',
-                                                        as it is does not have the YamlConfiguration attribute defined");
-                }
-                return LoadConfig(attribute.Attribute.ConfigurationFileName);
-            }
-        }
+        /// <value>
+        /// The resolve.
+        /// </value>
+        public T Resolve => Config.Value;
+
+        /// <summary>
+        /// Lazy loads the config from 
+        /// </summary>
+        private static readonly Lazy<T> Config = new Lazy<T>(LoadConfig);
 
         /// <summary>
         /// Loads the configuration.
         /// </summary>
-        /// <typeparam name="T">Configuration type</typeparam>
-        /// <param name="configPath">The configuration path.</param>
         /// <returns>Instance of Config type</returns>
-        private static T LoadConfig(string configPath)
+        private static T LoadConfig()
         {
             var deserializer = new Deserializer(namingConvention: new NullNamingConvention(), ignoreUnmatched: true);
 
-            using (TextReader reader = File.OpenText(configPath))
+            using (TextReader reader = File.OpenText(GetConfigPath()))
             {
                 return deserializer.Deserialize<T>(reader);
             }
+        }
+
+        /// <summary>
+        /// Gets the configuration path.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.InvalidOperationException">
+        /// Thrown if cannot retrieve Yaml configuration for type
+        /// </exception>
+        private static string GetConfigPath()
+        {
+            var configType = ConfigTypes.FirstOrDefault(t => t.Type == typeof(T));
+            if (configType == null)
+            {
+                throw new InvalidOperationException($@"Cannot retrieve Yaml configuration for type '{typeof(T).Name}'.
+                                                        Please ensure that the YamlConfiguration attribute defined");
+            }
+            return configType.Attribute.ConfigurationFileName;
         }
     }
 }

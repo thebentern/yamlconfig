@@ -7,8 +7,8 @@
     <ProjectGuid>{458FE17A-5C10-4C8F-85E4-59FE3184CB5B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YamlConfig</RootNamespace>
-    <AssemblyName>YamlConfig</AssemblyName>
+    <RootNamespace>YamlConfig.Core</RootNamespace>
+    <AssemblyName>YamlConfig.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

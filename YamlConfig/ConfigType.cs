@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace YamlConfig
+namespace YamlConfig.Core
 {
     /// <summary>
     /// Container for Configuration type reference and its corresponding Attribute reference

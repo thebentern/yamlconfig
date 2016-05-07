@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace YamlConfig
+namespace YamlConfig.Core
 {
     /// <summary>
     /// Resolver types which contain the <see cref="YamlConfigAttribute"/> type

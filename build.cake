@@ -39,7 +39,7 @@ Task("Generate-Coverage")
     .Does(() =>
     {
         OpenCover(tool => {
-          tool.NUnit3("./YamlConfig.Test/bin/" + configuration + "/YamlConfig.Tests.dll", new NUnit3Settings {
+          tool.NUnit3("./YamlConfig.Test/bin/" + configuration + "/YamlConfig.Test.dll", new NUnit3Settings {
                 ToolPath = tools + "nunit3-console.exe",
                 NoResults = true
               });
@@ -49,7 +49,7 @@ Task("Generate-Coverage")
               ToolPath = tools + "OpenCover.Console.exe",
               ArgumentCustomization = builder => builder.Append("-register:user")
             }
-            .WithFilter("+[YamlConfig]*")
+            .WithFilter("+[YamlConfig.Core]*")
             //Exclude tests project
             .WithFilter("-[YamlConfig.Test]*")
         );

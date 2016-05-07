@@ -1,8 +1,0 @@
-﻿# This is our basic application config yaml file
-
-MuhString: Derp
-MuhFavoriteNumber: 7
-MuhListOfThings: 
- - Cats
- - Dogs
- - Burds

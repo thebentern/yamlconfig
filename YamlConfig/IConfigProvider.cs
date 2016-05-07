@@ -1,4 +1,4 @@
-﻿namespace YamlConfig
+﻿namespace YamlConfig.Core
 {
     /// <summary>
     /// Interface for providing config instances 

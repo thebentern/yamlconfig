@@ -1,0 +1,13 @@
+﻿# This is a basic application config yaml 
+# Primitives 
+MuhString: Derp
+MuhFavoriteNumber: 7
+# IEnumerable
+MuhListOfThings: 
+ - Cats
+ - Dogs
+ - Burds
+# Complex type
+MuhComplexType: 
+  Derp: Thing
+  Derp2: 10

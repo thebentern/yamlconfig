@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace YamlConfig
+namespace YamlConfig.Core
 {
     /// <summary>
     /// Configuration attribute for denoting the strongly typed configuration

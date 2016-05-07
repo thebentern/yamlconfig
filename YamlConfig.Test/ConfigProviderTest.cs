@@ -41,7 +41,7 @@ namespace YamlConfig.Test
         [Test]
         public void Throws_An_IO_Exception_When_Attempting_To_Resolve_Type_With_Invalid_Config_Path()
         {
-            Assert.Throws<InvalidOperationException>(() => { var thing = new ConfigProvider<TextReader>().Resolve; });
+            Assert.Throws<FileNotFoundException>(() => { var thing = new ConfigProvider<DefaultConfig>().Resolve; });
         }
     }
 }

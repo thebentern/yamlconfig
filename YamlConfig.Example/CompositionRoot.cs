@@ -1,6 +1,8 @@
 ﻿using SimpleInjector;
 
-namespace YamlConfig.Core
+using YamlConfig.Core;
+
+namespace YamlConfig.Console.Example
 {
     /// <summary>
     /// Bootstrapper for the host application

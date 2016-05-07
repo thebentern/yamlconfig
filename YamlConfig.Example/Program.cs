@@ -1,6 +1,6 @@
 ﻿using YamlConfig.Core;
 
-namespace YamlConfig.Example
+namespace YamlConfig.Console.Example
 {
     /// <summary>
     /// Example program for yamlconfig

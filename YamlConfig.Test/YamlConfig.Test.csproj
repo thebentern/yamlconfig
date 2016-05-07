@@ -82,7 +82,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ConfigProviderTest.cs" />
-    <Compile Include="CompositionRootTest.cs" />
     <Compile Include="Fixtures\AppConfig.cs" />
     <Compile Include="AssemblyConfigResolverTest.cs" />
     <Compile Include="Fixtures\DefaultConfig.cs" />
@@ -96,9 +95,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YamlConfig\YamlConfig.csproj">
+    <ProjectReference Include="..\YamlConfig\YamlConfig.Core.csproj">
       <Project>{458FE17A-5C10-4C8F-85E4-59FE3184CB5B}</Project>
-      <Name>YamlConfig</Name>
+      <Name>YamlConfig.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

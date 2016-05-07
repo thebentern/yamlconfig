@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlConfig.Example", "YamlConfig.Example\YamlConfig.Example.csproj", "{8254EF6F-1166-4298-AF72-A79B64838A12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlConfig.Console.Example", "YamlConfig.Example\YamlConfig.Console.Example.csproj", "{8254EF6F-1166-4298-AF72-A79B64838A12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlConfig", "YamlConfig\YamlConfig.csproj", "{458FE17A-5C10-4C8F-85E4-59FE3184CB5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlConfig.Core", "YamlConfig\YamlConfig.Core.csproj", "{458FE17A-5C10-4C8F-85E4-59FE3184CB5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlConfig.Test", "YamlConfig.Test\YamlConfig.Test.csproj", "{367338F5-0A32-4DDF-8F04-08FBCB52F22F}"
 EndProject

@@ -15,9 +15,9 @@ namespace YamlConfig.Core
         /// <remarks>
         /// Configuration file defaults to Config.yml
         /// </remarks>
-        public YamlConfigAttribute(string configurationFileName = null)
+        public YamlConfigAttribute(string configurationFileName = "Config.yml")
         {
-            this.ConfigurationFileName = configurationFileName ?? "Config.yml";
+            this.ConfigurationFileName = configurationFileName;
         }
 
         /// <summary>

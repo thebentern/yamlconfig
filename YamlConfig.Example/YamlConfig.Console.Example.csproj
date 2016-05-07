@@ -7,8 +7,8 @@
     <ProjectGuid>{8254EF6F-1166-4298-AF72-A79B64838A12}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YamlConfig.Example</RootNamespace>
-    <AssemblyName>YamlConfig.Example</AssemblyName>
+    <RootNamespace>YamlConfig.Console.Example</RootNamespace>
+    <AssemblyName>YamlConfig.Console.Example</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SimpleInjector, Version=3.1.4.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.1.4\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompositionRoot.cs" />
     <Compile Include="MyAppConfig.cs" />
     <Compile Include="MyDifferentFileConfig.cs" />
     <Compile Include="Program.cs" />
@@ -57,11 +62,12 @@
     <Content Include="MyDifferentFileConfig.yml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\YamlConfig\YamlConfig.csproj">
+    <ProjectReference Include="..\YamlConfig\YamlConfig.Core.csproj">
       <Project>{458fe17a-5c10-4c8f-85e4-59fe3184cb5b}</Project>
-      <Name>YamlConfig</Name>
+      <Name>YamlConfig.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

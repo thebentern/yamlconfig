@@ -5,7 +5,6 @@ environment:
     secure: X/mMM/3eo9aFK7x5nlg3k50leOMaum6vKGxskGzniWXQ7+pMsbrus0q1tCwCAePo
 
 build_script:
-
 - ps: .\build.ps1
 
 after_build:

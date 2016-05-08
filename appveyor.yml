@@ -3,9 +3,12 @@ version: 1.0.{build}
 environment:
   COVERALLS_REPO_TOKEN:
     secure: X/mMM/3eo9aFK7x5nlg3k50leOMaum6vKGxskGzniWXQ7+pMsbrus0q1tCwCAePo
+  NUGET_API_TOKEN:
+    secure: v13bddMcQVZ0gldEle8gn+FoOmTcJX7xJwT+rD7MyVv418tKAnAd4tDvbhaPU/+b
 
 build_script:
 - ps: .\build.ps1
 
 after_build:
 - cmd: packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover result.xml
+#- cmd: nuget push foo.nupkg %NUGET_API_TOKEN% -Source https://api.nuget.org/v3/index.json

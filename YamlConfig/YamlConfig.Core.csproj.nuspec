@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>YamlConfig</id>
+    <version>1.0.0</version>
+    <authors>Ben Meadors</authors>
+    <owners>Ben Meadors</owners>
+    <licenseUrl>https://github.com/thebentern/yamlconfig/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/thebentern/yamlconfig</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple .NET Strongly-typed Application Configuration with YAML</description>
+    <releaseNotes>Intial release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>c# .net yaml config configuration</tags>
+    <!--<dependencies>
+      <dependency id="SampleDependency" version="1.0" />
+    </dependencies>-->
+  </metadata>
+  <files>
+    <file src="bin\Release\YamlConfig.Core.dll" target="lib\net46" />
+    <file src="bin\Release\YamlConfig.Core.pdb" target="lib\net46" />
+  </files>
+</package>

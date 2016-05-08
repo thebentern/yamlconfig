@@ -1,4 +1,6 @@
 # yamlconfig
+
+[![Join the chat at https://gitter.im/thebentern/yamlconfig](https://badges.gitter.im/thebentern/yamlconfig.svg)](https://gitter.im/thebentern/yamlconfig?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 .NET Strongly-typed Application Configuration with YAML
 
 

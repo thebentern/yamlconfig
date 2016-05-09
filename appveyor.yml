@@ -11,4 +11,5 @@ build_script:
 
 after_build:
 - cmd: packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover result.xml
+- cmd: nuget pack YamlConfig\YamlConfig.Core.csproj.nuspec
 #- cmd: nuget push foo.nupkg %NUGET_API_TOKEN% -Source https://api.nuget.org/v3/index.json

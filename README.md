@@ -37,7 +37,7 @@ configuration:
 
 ### Aren't you re-inventing the wheel though?
 
-Yes, but this wheel is sexier than the existing one.
+Yes, but this wheel is cooler.
 
 
 # Contributing
